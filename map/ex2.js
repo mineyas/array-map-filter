@@ -32,6 +32,8 @@ Sample foods array, i.e. INPUT:
     }
   ]
 
+  } )
+
 Expected OUTPUT for this sample
   [
     'Bacon is not suitable for vegetarians',
@@ -42,7 +44,26 @@ Expected OUTPUT for this sample
 
 */
 
+/* 
+
+if(isVegetarian = true {
+    return "FOOD is suitable for vegetarians";
+    else {
+    return "FOOD is not suitable for vegetarians";
+    }
+
+
+*/
+
 function getFoodCategories(foods) {
+  return foods.map(newAr => {
+    if (newAr.isVegetarian === true) {
+      return newAr.food + ' is suitable for vegetarians'
+    } 
+    else {
+      return newAr.food + ' is not suitable for vegetarians'
+    }
+})
 }
 
 

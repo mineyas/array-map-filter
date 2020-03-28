@@ -61,7 +61,24 @@ Expected OUTPUT for this sample:
 
  */
 
+
+ /* new prop
+ movies.label = rotten if rating < 60
+                fresh if rating > 60 && rating <= 75
+                certified fresh if rating > 75
+ */
+
 function getMoviesFreshness(movies) {
+  return movies.map(newAr => {
+    if(newAr.rating < 60){
+      newAr.label = 'rotten'
+    } else if(newAr.rating >= 60 && newAr.rating <= 75){
+      newAr.label = 'fresh'
+    } else {
+      newAr.label = 'certified fresh';
+    }
+    return newAr
+  })
 }
 
 
